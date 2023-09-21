@@ -4,8 +4,8 @@ import {registerController} from '../controllers/authController.js'
 // router object
 const router = express.Router();
 
-// routing
-// register || METHOD POST
+// routes congiguration
+// register || METHOD POST 
 router.post('/register' , registerController);
 
 
