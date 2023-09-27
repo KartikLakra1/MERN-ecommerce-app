@@ -25,7 +25,7 @@ app.use('/api/v1/auth' , authRouter);
 // rest api
 app.get( '/' , (req,res) => {
     res.send({
-        message : "Welcome to ecommerce app"
+        message : "Maman and mukesh"
     })
 })
 
