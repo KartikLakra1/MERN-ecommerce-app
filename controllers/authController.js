@@ -54,7 +54,7 @@ export const registerController = async(req,res) => {
     }
 }
 
-// login login
+// login 
 export const loginController = async(req,res) => {
     try{
         const {email , password} = req.body;

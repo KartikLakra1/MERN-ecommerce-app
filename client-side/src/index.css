@@ -145,3 +145,19 @@
     margin-top: 1rem;
   }
 }
+
+/* ===========================================register page */
+.register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* color: aliceblue; */
+  height: 80vh;
+  flex-direction: column;
+  width: 100%;
+  /* background: linear-gradient(to right, #131212, #201b1b); */
+}
+
+.form-control {
+  width: 100%;
+}
