@@ -27,8 +27,8 @@
 .navbar-brand {
   font-weight: 900 !important;
   color: black;
-  letter-spacing: 3px;
-  font-size: 30px;
+  letter-spacing: auto;
+  font-size: 1.8rem;
 }
 
 .nav-link {
@@ -144,20 +144,4 @@
   .p {
     margin-top: 1rem;
   }
-}
-
-/* ===========================================register page */
-.register {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* color: aliceblue; */
-  height: 80vh;
-  flex-direction: column;
-  width: 100%;
-  /* background: linear-gradient(to right, #131212, #201b1b); */
-}
-
-.form-control {
-  width: 100%;
 }
