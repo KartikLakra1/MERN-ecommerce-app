@@ -3,6 +3,8 @@ import { comparePassword, hashPassword } from './../helpers/authHelper.js';
 // import { registerController } from './authController';
 import JWT from 'jsonwebtoken';
 
+
+// registeration Controller or Signin Controller
 export const registerController = async(req,res) => {
     try{
         const {name, email , password , phone , address} = req.body;
@@ -72,7 +74,7 @@ export const loginController = async(req,res) => {
         if(!user){
             return res.status(404).send({
                 success : false,
-                message : "email is not registered"
+                message : "email is not registered please register first"
             })
         }
 
