@@ -24,17 +24,17 @@ const Register = () => {
         {name , email , password , phone , address});
 
         if(res.data.success){
-          toast(res.data.message);
+          toast.success(res.data.message);
           navigate('/login');
           console.log(res.data);
         }else{
-          toast(res.data.message);
+          toast.error("Something went wrong");
         }
 
 
       }catch(error){
         console.log(error);
-        toast("Something went wrong");
+        toast.error("Something went wrong");
       }
     }
 
@@ -42,6 +42,8 @@ const Register = () => {
     <Layout title="Register - ecommerce app">
       <div className="form-container">
         <h1>Register page</h1>
+
+
         <form onSubmit={handleSubmit}>
 
           <div className="mb-3">
