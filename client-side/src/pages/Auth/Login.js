@@ -2,7 +2,7 @@ import React , {useState} from "react";
 import Layout from "./../../Components/Layout/Layout";
 import toast from 'react-hot-toast';
 
-import {useNavigate} from 'react-router-dom';
+import {useNavigate , useLocation} from 'react-router-dom';
 
 import axios from 'axios';
 import '../styles/AuthStyle.css';
@@ -13,6 +13,8 @@ const Login = () => {
     const [email , setemail] = useState("")
     const [password , setpassword] = useState("");
     const [auth , setauth] = useAuth();
+
+    const location = useLocation();
 
     const navigate = useNavigate();
 
@@ -34,7 +36,9 @@ const Login = () => {
             });
             // adding to the local storage
             localStorage.setItem('auth',JSON.stringify(res.data));
-            navigate('/');
+
+            navigate(location.state || '/');
+            
             console.log(res.data.message);
           }else{
             toast.error(res.data.message);
