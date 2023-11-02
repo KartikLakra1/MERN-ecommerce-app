@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import { useAuth } from "../../context/auth";
 import { toast } from "react-hot-toast";
+import Dashboard from './../../pages/user/Dashboard';
 
 const Header = () => {
   const [auth, setauth] = useAuth();
@@ -46,7 +47,7 @@ const Header = () => {
                 </NavLink>
               </li>
 
-              
+
               {!auth.user ? (
                 <>
                   <li className="nav-item">
@@ -63,14 +64,32 @@ const Header = () => {
                 </>
               ) : (
                 <>
-                  <li className="nav-item">
-                    <NavLink
-                      onClick={handlelogout}
-                      to="/login"
-                      className="nav-link ">
-                      LogOut
+
+                  <li className="nav-item dropdown">
+                    <NavLink className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      {auth?.user?.name}
                     </NavLink>
+                    <ul className="dropdown-menu">
+                      <li>
+                      <NavLink to="/Dashboard" className="dropdown-item">
+                      Dashboard
+                      </NavLink>
+                      </li>
+
+                      <li className="nav-item">
+                        <NavLink
+                          onClick={handlelogout}
+                          className="dropdown-item"
+                          to="/login">
+                          LogOut
+                        </NavLink>
+                      </li>
+
+                    </ul>
                   </li>
+
+
+
                 </>
               )}
 
